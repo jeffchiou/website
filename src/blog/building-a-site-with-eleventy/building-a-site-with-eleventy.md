@@ -161,7 +161,7 @@ For absolute links, I created a `_data` folder with a `site.js` file containing:
 
 ```javascript
 module.exports = {
-  baseUrl: process.env.ELEVENTY_ENV === 'development' ? 'http://localhost:8080' : 'https://jeffchiou.com',
+  baseUrl: process.env.ELEVENTY_ENV === 'development' ? 'http://localhost:8080' : 'https://www.jeffchiou.com',
   title: "Jeff Chiou",
 };
 ```
