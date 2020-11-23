@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf _site public",
+    "clean": "rm -rf _site",
     "dev:postcss": "postcss src/assets/styles/*.css --dir _site/assets/styles/ --watch",
     "dev:11ty": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch",
     "dev": "npm-run-all clean --parallel dev:*",
