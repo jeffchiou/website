@@ -2,13 +2,13 @@
   from = "https://www.jeffreychiou.com"
   to = "https://jeffchiou.com"
   status = 301
-  force = false
+  force = true
   query = {path = ":path"}
 
 [[redirects]]
   from = "https://jeffreychiou.com"
   to = "https://jeffchiou.com"
   status = 301
-  force = false
+  force = true
   query = {path = ":path"}
 
