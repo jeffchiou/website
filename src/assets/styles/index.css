@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+
+:root {
+  --text-color: 31, 41, 55;
+  --bg-color: 255, 252, 250;
+}
+
+.logo {
+  @apply font-display font-bold text-black overflow-visible relative;
+  --logo-height: 100px;
+  font-size: calc(var(--logo-height) * 0.4);
+  letter-spacing: 0.07em;
+  height: var(--logo-height);
+  width: calc(var(--logo-height) * 2.2);
+}
+
+.jeff {
+  @apply absolute;
+  top: 25%;
+  left: calc(var(--logo-height) * 0.83);
+  /* Translate makes vertical position relative to center of text*/
+  transform: translateY(-50%);
+}
+
+.chiou {
+  @apply absolute;
+  top: 66.7%;
+  /* 66.7% is center of C if using transform: translate */
+  left: calc(var(--logo-height) * 1.02);
+  transform: translateY(-50%);
+}
+
+.auged-h1 {
+  --aug-border-y: 1px;
+  --aug-border-bg: rgb(var(--text-color));
+  --aug-border-x: -1px;
+  --aug-b-extend1: 66.7%;
+  --aug-t-extend1: 66.7%;
+  --aug-l-extend1: 30%;
+  --aug-r-extend1: 30%;
+}
+.auged-h1-wrapper {
+  @apply flex w-full justify-center;
+}
+.auged-h2 {
+  --aug-border-all: 1px;
+  --aug-border-bg: rgb(var(--text-color));
+  --aug-bl-inset2: 66.7%;
+}
+.auged-h3 {
+  --aug-border-all: -1px;
+  --aug-border-left: 1px;
+  --aug-border-bg: rgb(var(--text-color));
+  --aug-inlay-bg: linear-gradient(0.25turn, rgba(var(--text-color), 0.1), rgba(var(--bg-color),0) 66.7%);
+  --aug-l1-width: 10px;
+  --aug-l2-width: 10px;
+}
+
+.auged-nava {
+  @apply font-serif font-bold inline-block text-right text-gray-800 no-underline py-1 pl-2 pr-4 sm:p-2 sm:px-4 sm:text-2xl;
+  --aug-border-all: 1px;
+  --aug-border-bg: rgb(var(--text-color));  
+  width: 10rem;
+  max-width: 100%;
+}
+
+.auged-nava-wrapper {
+  @apply p-1 sm:w-40 sm:flex-grow-0;
+}
+
+#auxiliary {
+  @apply p-6;
+}
+
+.table-of-contents ol { counter-reset: list-item;}
+.table-of-contents li { display: block; counter-increment: list-item; }
+.table-of-contents li:before { content: counters(list-item,'.') ' '; }
+
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Jost";
+    src: url(../fonts/Jost-VariableFont_wght.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Jost";
+    font-style: italic;
+    src: url(../fonts/Jost-Italic-VariableFont_wght.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Sorts Mill Goudy";
+    font-display: swap;
+    src: url(../fonts/SortsMillGoudy-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Sorts Mill Goudy";
+    font-style: italic;
+    font-display: swap;
+    src: url(../fonts/SortsMillGoudy-Italic.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Righteous";
+    font-display: swap;
+    src: local("Righteous"), local("Righteous-Regular"),
+      url(../fonts/righteous.woff2) format("woff2"),
+      url(../fonts/righteous.woff) format("woff");
+  }
+}
+
+
+@layer components {
+  body {
+    font-variation-settings: 'wght' 360;    
+  }
+  #all-wrapper {
+    @apply w-screen sm:w-auto;
+    grid-template-rows: auto;    
+    max-width: 2560px;
+  }
+  header {
+    /* flex: 0 0 25%; */
+  }
+  main {
+    /* max-width: 100vw; */
+  }
+  #main-copy {
+    display: none;
+    height: 99vh;
+  }
+  
+  #auxiliary {
+    display: none;
+    height: 99vh;
+  }
+  p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif font-bold;
+  }
+  h1 {
+    @apply text-5xl p-10 text-center m-6 inline-block;
+  }
+  h2 {
+    @apply text-4xl p-6 text-right pb-8 m-6;
+  }
+  h3 {
+    @apply text-3xl p-4 m-6 ml-0 pl-7;
+  }
+  h4 {
+    @apply text-2xl p-3;
+  }
+  h5 {
+    @apply text-xl p-2;
+  }
+  a {
+    @apply underline text-blue-900;
+  }
+  ul, ol {
+    @apply pl-8;
+  }
+  ul {
+    @apply list-disc;
+  }
+  ul ul { list-style-type: circle; }
+  ul ul ul { list-style-type: square; }
+  ul ul ul ul { list-style-type: disc; }
+  ul ul ul ul ul { list-style-type: circle; }
+  ul ul ul ul ul ul { list-style-type: square; }
+  ol {
+    @apply list-decimal;
+  }
+  ol ol { list-style-type: upper-alpha;}
+  ol ol ol {list-style-type: upper-roman;}
+  ol ol ol ol {list-style-type: lower-alpha;}
+  ol ol ol ol ol {list-style-type: lower-roman;}
+  ol ol ol ol ol ol {list-style-type: lower-greek;}
+}
+
+@media only screen and (min-width: 640px) {
+  #all-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  header {
+    /* flex: 0 0 25%; */
+    grid-column: 1 / span 1;
+  }
+  main {
+    /* flex: 0 1 41.67%; */
+    grid-column: 2 / span 2;
+    height: 99vh;
+  }
+  #main-copy {
+    display: none;
+  }
+  
+  #auxiliary {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #all-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+  }
+  header {
+    /* flex: 0 0 25%; */
+    grid-column: 1 / span 1;
+  }
+  main {
+    /* flex: 0 1 41.67%; */
+    grid-column: 2 / span 2;
+  }
+  #main-copy {
+    grid-column: 4 / span 2;
+    display: block;
+  }
+  
+  #auxiliary {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  #all-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    max-width: 2560px;
+  }
+  header {
+    /* flex: 0 0 25%; */
+    grid-column: 1 / span 1;
+  }
+  main {
+    /* flex: 0 1 41.67%; */
+    grid-column: 2 / span 2;
+  }
+  #main-copy {
+    grid-column: 4 / span 2;
+  }
+  
+  #auxiliary {
+    grid-column: 6 / span 2;
+    grid-row: 1 / 1;
+    display: block;
+  }
+}

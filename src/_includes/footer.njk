@@ -1,0 +1,20 @@
+<p class="text-right">
+{%- if datePosted %}
+Posted: {{ datePosted | formatDate}}<br>
+{%- endif %}
+Modified: {{ page.date | formatDate}}
+</p>
+<footer class="px-4 py-2 mt-4 bg-brown-100 flex justify-center">
+  <p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text">
+    ©
+    <span class="copyright-notice">2019-2020</span>
+    <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="www.jeffchiou.com">Jeffrey Chiou</a>
+    licensed under
+    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+
+      <img class="h-5 inline align-middle ml-1" src="{{site.baseUrl}}/assets/img/cc.svg"/>
+      <img class="h-5 inline align-middle ml-1" src="{{site.baseUrl}}/assets/img/by.svg"/>
+      <img class="h-5 inline align-middle ml-1" src="{{site.baseUrl}}/assets/img/sa.svg"/>
+    </p>
+
+</footer>

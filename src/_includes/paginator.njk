@@ -1,0 +1,39 @@
+{% macro paginate(pagination) %}
+<nav class="flex justify-around items-center paginator" aria-labelledby="paginator">
+  {%- if pagination.href.previous %}
+  <p><a href="{{pagination.href.previous}}">Previous</a></p>
+  {% else %}
+  <p class="text-gray-400">Previous</p>
+  {%- endif %}
+
+  {%- for pageUrl in pagination.hrefs %}
+    {%- set isCurrentPage = pagination.pageNumber == loop.index0 -%}
+    {%- if isCurrentPage %}<strong>{%- endif %}
+
+    {%- if isCurrentPage 
+    or loop.first 
+    or loop.last
+    or pagination.pageNumber in [loop.index0-1, loop.index0+1] -%}
+
+      {%- if loop.last and pagination.pageNumber < (loop.length - 3) -%}
+        ...
+      {%- endif -%}
+
+      <a href="{{ pageUrl }}">{{ loop.index }}</a>
+
+      {%- if loop.first and pagination.pageNumber > 2 -%}
+        ...
+      {%- endif -%}
+
+    {%- endif -%}
+    
+    {%- if isCurrentPage %}</strong>{%- endif %}
+  {%- endfor %}
+
+  {%- if pagination.href.next %}
+  <p><a href="{{pagination.href.next}}">Next</a></p>
+  {% else %}
+  <p class="text-gray-400">Next</p>
+  {%- endif %}
+</nav>
+{% endmacro %}

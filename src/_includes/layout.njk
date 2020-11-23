@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>{{ title }}
+      ·
+      {{ site.title }}</title>
+    <link rel="preload" as="font" href="{{site.baseUrl}}/assets/fonts/Jost-VariableFont_wght.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{site.baseUrl}}/assets/fonts/SortsMillGoudy-Regular.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{site.baseUrl}}/assets/fonts/righteous.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/augmented-ui.min.css">
+    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/prism-synthwave84.css" >
+    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/katex.min.css">    
+    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/index.css">
+    <script defer src="{{ site.baseUrl }}/assets/js/mermaid.min.js"></script>
+    {% block head %}{% endblock %}
+    <script defer src="{{ site.baseUrl }}/assets/js/index.js"></script>
+    <script type="module">
+      import { Account, Channel, Coord, ScrollFuncs } from "{{ site.baseUrl }}/assets/js/coordiscroll.js"
+
+      window.onload = () => {
+        let main = document.querySelector('#main-main')
+        let mainCopy = document.querySelector('#main-copy')
+        let auxExists = document.querySelector('.aux-unique')
+        let aux = document.querySelector("#auxiliary")
+        mainCopy.scrollTop = main.clientHeight
+        if (!auxExists) { aux.scrollTop = main.clientHeight*2 }
+        let [accs, chs] = Coord.fullyConnect([main, mainCopy], "relSpring")
+      }
+    </script>
+    
+
+  </head>
+  <body class="bg-brown-50 bg-opacity-50 text-lg font-sans text-gray-800 leading-snug flex justify-center absolute">
+    <div id="all-wrapper" class="flex flex-col">
+        {% include "header.njk" %}
+
+        <main id="main-main" class="p-6 sm:overflow-auto">
+          <div id="main-inner">            
+            {# Title will be shown unless hideTitle is True in frontmatter #}
+            {%- if not hideTitle %}
+              <h1>{{title}}</h1>
+            {%- endif %}
+
+            {{ content | safe }}
+          </div>
+        </main>
+        <div id="main-copy-controls" class="">
+        </div>
+        <div id="auxiliary-controls" class="">
+        </div>
+        <div class="sm:hidden">
+        {% include "footer.njk" %}
+        </div>
+    </div>
+    <script>
+      mermaid.initialize({startOnLoad: true});
+    </script>
+  </body>
+</html>
