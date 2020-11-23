@@ -1,14 +1,12 @@
 [[redirects]]
-  from = "https://www.jeffreychiou.com/"
-  to = "https://www.jeffchiou.com/"
+  from = "https://www.jeffreychiou.com/*"
+  to = "https://www.jeffchiou.com/:splat"
   status = 301
   force = true
-  query = {path = ":path"}
 
 [[redirects]]
-  from = "https://jeffreychiou.com/"
-  to = "https://www.jeffchiou.com/"
+  from = "https://jeffreychiou.com/*"
+  to = "https://www.jeffchiou.com/:splat"
   status = 301
   force = true
-  query = {path = ":path"}
 
