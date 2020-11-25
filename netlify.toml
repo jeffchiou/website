@@ -10,3 +10,8 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://jeffchiou.netlify.app/*"
+  to = "https://www.jeffchiou.com/:splat"
+  status = 301
+  force = true

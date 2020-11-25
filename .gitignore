@@ -2,5 +2,6 @@ temp
 node_modules
 _site
 TODO.md
+
 # Local Netlify folder
 .netlify

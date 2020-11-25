@@ -1,6 +1,3 @@
-
-// import { Coord } from "coordiscroll.js"
-
 let notices = document.querySelectorAll('.copyright-notice')
 for (notice of notices) {
   notice.innerHTML = "2019-" + new Date().getFullYear()
@@ -41,15 +38,29 @@ const insertClone = (target, elToClone, id=null, _class=null) => {
   return newEl
 }
 
-// let [accs, chs] = Coord.fullyConnect(".my_element_class")
 
 let main = document.querySelector("main")
 let copyDiv = document.querySelector("#main-copy-controls")
 let mainCopy = insertClone(copyDiv,main,"main-copy")
 mainCopy.style.width = main.style.width
 
+// Utterances commenting system
+let s = document.createElement('script')
+s.setAttribute('src', 'https://utteranc.es/client.js')
+s.setAttribute('repo','jeffchiou/website')
+s.setAttribute('label','💬')
+s.setAttribute('issue-term','pathname')
+s.setAttribute('theme','boxy-light')
+s.setAttribute('crossorigin','anonymous')
+s.setAttribute('defer','')
+let s2 = s.cloneNode(true)
+mainCopy.append(s)
+
 let aux = document.querySelector("#auxiliary-content")
 let auxDiv = document.querySelector("#auxiliary-controls")
-aux ? insertClone(auxDiv,aux,"auxiliary","aux-unique") : insertClone(auxDiv,main,"auxiliary","aux-copied")
-
-
+if (aux) { 
+  auxCopy = insertClone(auxDiv,aux,"auxiliary","aux-unique")
+} else {
+  auxCopy = insertClone(auxDiv,main,"auxiliary","aux-copied")
+} 
+auxCopy.append(s2)

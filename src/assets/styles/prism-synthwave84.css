@@ -1,16 +1,16 @@
 code[class*="language-"],
-pre[class*="language-"] {
-  color: #f92aad;
+pre[class*="language-"] { 
+  color: hsl(322, 94.52%, 68%);
   text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3;
   background: none;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
+  font-size: 0.9em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.25;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
