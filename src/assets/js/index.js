@@ -54,7 +54,7 @@ s.setAttribute('theme','boxy-light')
 s.setAttribute('crossorigin','anonymous')
 s.setAttribute('defer','')
 let s2 = s.cloneNode(true)
-mainCopy.append(s)
+
 
 let aux = document.querySelector("#auxiliary-content")
 let auxDiv = document.querySelector("#auxiliary-controls")
@@ -62,5 +62,12 @@ if (aux) {
   auxCopy = insertClone(auxDiv,aux,"auxiliary","aux-unique")
 } else {
   auxCopy = insertClone(auxDiv,main,"auxiliary","aux-copied")
-} 
-auxCopy.append(s2)
+}
+
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+// Avoid hammering the github search api
+sleep(1000).then( () => mainCopy.append(s) )
+sleep(3000).then( () => auxCopy.append(s2) )
