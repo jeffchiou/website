@@ -34,7 +34,7 @@ const insertClone = (target, elToClone, id=null, _class=null) => {
   newEl.classList.remove("hidden")
   if (_class) newEl.classList.add(_class)
   let parent = target.parentNode
-  parent.insertBefore(newEl, target) 
+  parent.insertBefore(newEl, target)
   return newEl
 }
 
@@ -58,7 +58,7 @@ let s2 = s.cloneNode(true)
 
 let aux = document.querySelector("#auxiliary-content")
 let auxDiv = document.querySelector("#auxiliary-controls")
-if (aux) { 
+if (aux) {
   auxCopy = insertClone(auxDiv,aux,"auxiliary","aux-unique")
 } else {
   auxCopy = insertClone(auxDiv,main,"auxiliary","aux-copied")
@@ -68,6 +68,22 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-// Avoid hammering the github search api
-sleep(1000).then( () => mainCopy.append(s) )
-sleep(3000).then( () => auxCopy.append(s2) )
+// Try to avoid hammering the github search api if changing pages quickly
+sleep(1000).then( () => mainCopy.appendChild(s) )
+sleep(3000).then( () => auxCopy.appendChild(s2) )
+// async function checkComments(mainCopy, auxCopy) {
+//   let utterances;
+//   for (let i=0; i<30; i++) {
+//     await sleep(1000);
+//     utterances = document.querySelector('.utterances')
+//     if (utterances) {
+//       await sleep(1000)
+//       break;
+//     }
+//   }
+//   console.log(utterances)
+//   mainCopy.append(utterances)
+//   auxCopy.append(utterances)
+// }
+// checkComments(mainCopy, auxCopy)
+

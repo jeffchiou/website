@@ -178,6 +178,13 @@
   ol ol ol ol {list-style-type: lower-alpha;}
   ol ol ol ol ol {list-style-type: lower-roman;}
   ol ol ol ol ol ol {list-style-type: lower-greek;}
+  table {
+    @apply w-full;
+  }
+  td {
+    @apply p-2;
+    border: 1px solid black;
+  }
 }
 
 @media only screen and (min-width: 640px) {
