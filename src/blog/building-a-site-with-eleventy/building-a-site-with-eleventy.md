@@ -1,7 +1,7 @@
 ---
 title: Building a Site with Eleventy
 tags: blog
-datePosted: "2012-11-22"
+datePosted: 2012-11-22
 ---
 
 [toc]

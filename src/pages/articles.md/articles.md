@@ -11,7 +11,15 @@ pagination:
 # Articles
 
 {% for post in posts | reverse %}
+<div class="flex justify-between items-center">
+
 [{{post.data.title}}]({{site.baseUrl}}{{post.url}})
+
+  <div class="text-sm text-gray-600 flex flex-col items-end">
+  <div>Posted {{post.data.datePosted | formatDate}}</div>
+  <div>Modified {{post.date.toUTCString() | formatDate}}</div>
+  </div>
+</div>
 {% endfor %}
 
 {% import "paginator.njk" as paginator %}
