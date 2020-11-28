@@ -19,31 +19,12 @@ I separate my writing into two categories: articles and blog posts. Articles are
 
 ## Articles
 
-{% for article in collections.article | reverse %}
-<div class="flex justify-between items-center">
-
-[{{article.data.title}}]({{site.baseUrl}}{{article.url}})
-
-  <div class="text-sm text-gray-600 flex flex-col items-end">
-  <div>Posted {{article.data.datePosted | formatDate}}</div>
-  <div>Modified {{article.date.toUTCString() | formatDate}}</div>
-  </div>
-</div>
-{% endfor %}
+{% import "post-lister.njk" as PostLister %}
+{{ PostLister.listPosts(collections.article) }}
 
 ## Blog Posts
 
-{% for post in posts | reverse %}
-<div class="flex justify-between items-center">
-
-[{{post.data.title}}]({{site.baseUrl}}{{post.url}})
-
-  <div class="text-sm text-gray-600 flex flex-col items-end">
-  <div>Posted {{post.data.datePosted | formatDate}}</div>
-  <div>Modified {{post.date.toUTCString() | formatDate}}</div>
-  </div>
-</div>
-{% endfor %}
+{{ PostLister.listPosts(posts) }}
 
 {% import "paginator.njk" as paginator %}
 {{ paginator.paginate(pagination) }}
