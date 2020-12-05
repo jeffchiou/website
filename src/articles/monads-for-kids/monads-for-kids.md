@@ -6,6 +6,8 @@ datePosted: 2020-11-27
 
 [toc]
 
+What are monads? They aren't as complicated as you think. Maybe this short story will help.
+
 ## Robots and Supervisors
 
 You're the boss of a car factory. Your cars are made on a robotic assembly line. Each robot performs a function, adding or changing parts, and passes the unfinished car to the next robot. Normally you end up with a shiny new car at the end, but you have a problem. Sometimes the car parts going into the assembly line aren't perfect, so the robots mess up. If the first robot messes up, the second robot tries to work on the defective car and breaks. Then the third robot tries and also breaks. Pretty soon your whole assembly line is broken. 
@@ -21,22 +23,57 @@ Your factory has become so successful that some of your customers want to order 
 Now, you can rest easy knowing your assembly lines are running smoothly with the help of the Monads.
 
 ## Credits
-|               |                    |
-| ------------: | :----------------- |
-| Car Being Assembled | Data               |
-| Robot Behavior | Functions          |
-| Assembly Line | Chain of functions |
-|      M. Monad | Maybe Monad        |
-|      E. Monad | Either Monad       |
-|      W. Monad | Writer Monad       |
-|      R. Monad | Reader Monad       |
-|       The Boss, You | The Programmer     |
+
+<style>
+td {
+  border: 0px;
+}
+</style>
+<table>
+  <tbody>
+    <tr>
+    <td style="text-align:right">Car</td>
+    <td style="text-align:left">Data</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">Robot Behavior</td>
+    <td style="text-align:left">Functions</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">Assembly Line</td>
+    <td style="text-align:left">Chain of functions</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">M. Monad</td>
+    <td style="text-align:left">Maybe Monad</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">E. Monad</td>
+    <td style="text-align:left">Either Monad</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">W. Monad</td>
+    <td style="text-align:left">Writer Monad</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">R. Monad</td>
+    <td style="text-align:left">Reader Monad</td>
+    </tr>
+    <tr>
+    <td style="text-align:right">The Boss, You</td>
+    <td style="text-align:left">The Programmer</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Meta
 
 Every monad tutorial has to have some words about monad tutorials. I won't break tradition here. I wrote this tutorial to focus on the overall intuition around monads. Monads have been compared to assembly lines before but I found the analogies on the complex side. This version isn't an exact analogy, but I feel it's much more understandable. Hopefully this gave you an intuition of monads and what they do.
 
 I classified this article as an Article; a constant work in progress, so if you have suggestions, please tell me!
+
+Finally, if you want to learn how to implement monads in python, one of my favorite tutorials is [https://nikgrozev.com/2013/12/10/monads-in-15-minutes/](https://nikgrozev.com/2013/12/10/monads-in-15-minutes/). Check it out!
 
 [^robot-assembly]: [Photo](https://unsplash.com/photos/jHZ70nRk7Ns) by [Lenny Kuhne](https://unsplash.com/@lennykuhne?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
