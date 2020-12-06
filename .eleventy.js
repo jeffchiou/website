@@ -16,8 +16,8 @@ module.exports = function (eleventyConfig) {
   markdownLibrary.use(require("markdown-it-footnote"));
   markdownLibrary.use(require("@iktakahiro/markdown-it-katex"));
   markdownLibrary.use(require("markdown-it-textual-uml"));
-  markdownLibrary.use(require("markdown-it-anchor"));
-  markdownLibrary.use(require("markdown-it-toc-done-right"));
+  markdownLibrary.use(require("markdown-it-anchor"), { level: [2,3,4], permalink: true, permalinkSymbol: '§' });
+  markdownLibrary.use(require("markdown-it-toc-done-right"), { level: [2,3,4] });
 
   eleventyConfig.setLibrary("md", markdownLibrary);
   eleventyConfig.setTemplateFormats([

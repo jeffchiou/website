@@ -43,6 +43,25 @@
 .auged-h1-wrapper {
   @apply flex w-full justify-center;
 }
+
+.header-anchor {
+  @apply no-underline opacity-0;  
+}
+h2 .header-anchor {
+  @apply absolute;
+  left: 1rem;
+}
+
+h2:hover .header-anchor,
+h3:hover .header-anchor,
+h2:hover .header-anchor,
+h4:hover .header-anchor,
+h5:hover .header-anchor,
+h6:hover .header-anchor {
+  @apply opacity-100;
+}
+
+
 .auged-h2 {
   --aug-border-all: 1px;
   --aug-border-bg: rgb(var(--text-color));
@@ -57,7 +76,11 @@
   --aug-l2-width: 10px;
 }
 .nava {
-  background: none;
+  @apply no-underline;  
+}
+.nava:hover {
+  @apply bg-brown-100;
+  background-image: none;
 }
 .auged-nava {
   @apply font-serif font-bold inline-block text-right text-gray-800 no-underline py-1 pl-2 pr-4 sm:p-2 sm:px-4 sm:text-2xl;
@@ -147,7 +170,7 @@
     @apply text-5xl p-10 text-center m-6 inline-block;
   }
   h2 {
-    @apply text-4xl p-6 text-right pb-8 m-6;
+    @apply text-4xl p-6 text-right pb-8 pl-8 m-6;
   }
   h3 {
     @apply text-3xl p-4 m-6 ml-0 pl-7;
@@ -159,8 +182,11 @@
     @apply text-xl p-2;
   }
   a {
-    @apply text-lightblue-700;    
-    font-variation-settings: 'wght' 500;
+    @apply text-lightblue-800 underline;    
+    /* font-variation-settings: 'wght' 500;     */
+  }
+  a:hover {
+    @apply no-underline;
     background: linear-gradient(to top, transparent 5%, #d5e5ff 5%, #d5e5ff 35%, transparent 35%);
   }
   ul, ol {

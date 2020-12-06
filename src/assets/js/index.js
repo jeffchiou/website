@@ -64,13 +64,16 @@ if (aux) {
   auxCopy = insertClone(auxDiv,main,"auxiliary","aux-copied")
 }
 
+mainCopy.appendChild(s)
+auxCopy.appendChild(s2)
+
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 // Try to avoid hammering the github search api if changing pages quickly
-sleep(1000).then( () => mainCopy.appendChild(s) )
-sleep(3000).then( () => auxCopy.appendChild(s2) )
+// sleep(500).then( () => mainCopy.appendChild(s) )
+// sleep(1000).then( () => auxCopy.appendChild(s2) )
 // async function checkComments(mainCopy, auxCopy) {
 //   let utterances;
 //   for (let i=0; i<30; i++) {
