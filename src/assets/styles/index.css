@@ -56,7 +56,9 @@
   --aug-l1-width: 10px;
   --aug-l2-width: 10px;
 }
-
+.nava {
+  background: none;
+}
 .auged-nava {
   @apply font-serif font-bold inline-block text-right text-gray-800 no-underline py-1 pl-2 pr-4 sm:p-2 sm:px-4 sm:text-2xl;
   --aug-border-all: 1px;
@@ -157,7 +159,9 @@
     @apply text-xl p-2;
   }
   a {
-    @apply underline text-blue-900;
+    @apply text-lightblue-700;    
+    font-variation-settings: 'wght' 500;
+    background: linear-gradient(to top, transparent 5%, #d5e5ff 5%, #d5e5ff 35%, transparent 35%);
   }
   ul, ol {
     @apply pl-8;
@@ -184,6 +188,9 @@
   td {
     @apply p-2;
     border: 1px solid black;
+  }
+  code {
+    @apply bg-brown-100 text-base;
   }
 }
 

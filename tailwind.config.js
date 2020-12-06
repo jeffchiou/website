@@ -31,6 +31,11 @@ module.exports = {
           50: '#FFFCFA',
           100: '#F9F4EF',
         },
+        lightblue: {
+          300: '#D5E5FF',
+          700: '#0d48a5', //hsla(217, 85%, 35%, 1)
+          800: '#0a3376', //hsla(217, 85%, 25%, 1)
+        }
       },
     },
     fontFamily: {

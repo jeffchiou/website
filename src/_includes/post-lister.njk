@@ -1,7 +1,9 @@
 {% macro listPosts(posts) %}
 {% for post in posts | reverse %}
 <div class="grid grid-cols-3">
-<a class="col-span-2" href="{{site.baseUrl}}{{post.url}}">{{post.data.title}}</a>
+  <div class="col-span-2">
+    <a href="{{site.baseUrl}}{{post.url}}">{{post.data.title}}</a>
+  </div>
   <div class="col-span-1 text-sm text-gray-600 text-right">
   <div>Posted: {{post.data.datePosted | formatDate}}<br>
   Modded: {{post.date.toUTCString() | formatDate}}</div>
