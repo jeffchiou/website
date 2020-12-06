@@ -10,9 +10,8 @@ pagination:
 # Hi!
 I'm Jeff Chiou, a generalist with interests in artificial intelligence, neuroscience, and philosophy.
 
+<div class="font-serif text-2xl text-center font-bold w-full xl:hidden">With a wider window, you'd be seeing double!</div><div class="font-serif text-center text-2xl font-bold w-full hidden xl:block">Yes, you're seeing double!</div>
 
-#### <span class="xl:hidden">With a wider window, you'd be seeing double!</span>
-#### <span class="hidden xl:inline">Yes, you're seeing double!</span>
 I use synchronization to enable a better reading experience on wide screens. On long webpages, the columns are synchronized one page apart from each other. You can learn more about [CoordiScroll](https://jeffchiou.github.io/coordiscroll/), the synchronization tool I wrote, [here](https://github.com/jeffchiou/coordiscroll/).
 
 I separate my writing into two categories: articles and blog posts. Articles are considered constant works in progress and are more researched, deeply considered, and reflective of my true thoughts. Blog posts are typically rougher and shorter, encompassing notes, tutorials, and random ideas.
