@@ -47,11 +47,16 @@ I've categorized the programs I install with Scoop here in no particular order. 
   - [Geek Uninstaller](https://geekuninstaller.com/) `geekuninstaller`
   - [HashCheck](https://github.com/gurnec/HashCheck) `hashcheck`
   - [Keypirinha](https://keypirinha.com/) `keypirinha`
+  - [LaTeX](https://miktex.org/) `latex` [^latex]
   - [LockHunter](https://lockhunter.com/) `lockhunter-np` [^lockhunter]
+  - [Microsoft Powertoys](https://github.com/microsoft/PowerToys) `powertoys-np`
+  - [Pandoc](https://pandoc.org/) `pandoc`
+  - [pandoc-crossref filter](https://github.com/lierdakil/pandoc-crossref) `pandoc-crossref`
   - [Pixie](http://www.nattyware.com/pixie.php) `pixie`
   - [ShareX](https://getsharex.com/) `sharex`
   - [ShellMenuView](https://www.nirsoft.net/utils/shell_menu_view.html) `shellmenuview`
   - [Sysinternals](https://docs.microsoft.com/en-us/sysinternals/) `sysinternals`
+  - [WizTree](https://wiztreefree.com/) `wiztree`
 
 - Web Browsers
 
@@ -62,6 +67,7 @@ I've categorized the programs I install with Scoop here in no particular order. 
 
 - Notes and Research
 
+  - [Anki](https://apps.ankiweb.net/) `anki`
   - [Typora](https://typora.io/) `typora`
   - [Zettlr](https://www.zettlr.com/) `zettlr`
   - [Zotero](https://www.zotero.org/) `zotero`
@@ -72,6 +78,7 @@ I've categorized the programs I install with Scoop here in no particular order. 
   - [Discord](https://discord.com/) `discord`
   - [Slack](https://slack.com/) `slack`
   - [OBS Studio](https://obsproject.com/) `obs-studio`
+  - [Skype](https://www.skype.com/en/) `skype`
   - [Zoom](https://zoom.us/) `zoom`
 
 - Editing
@@ -108,11 +115,14 @@ Note that I install my password manager separately, checking the hashes manually
 Some of these programs are on Chocolatey but I prefer to install them manually.
 
 - [Adobe](https://www.adobe.com/creativecloud.html) products
+- [Drawboard PDF](https://www.drawboard.com/pdf/) for annotating PDFs
 - [Nvidia RTX Voice](https://www.nvidia.com/en-us/geforce/guides/nvidia-rtx-voice-setup-guide/)
 - [Logitech G Hub](https://www.logitechg.com/en-us/innovation/g-hub.html)
 - [Microsoft Office](https://www.office.com/)
+- [Microsoft Whiteboard](https://www.microsoft.com/en-us/p/microsoft-whiteboard/9mspc6mp8fm4?activetab=pivot:overviewtab)
 - Motherboard drivers, esp. audio
 - My password manager
+- [Startup Delayer](https://www.r2.com.au/page/products/show/startup-delayer/)[^startup-delayer]
 - [Windows Terminal Preview](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n8g5rfz9xk3?rtc=1&activetab=pivot:overviewtab)
 - Gaming
   - [NVIDIA GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
@@ -147,6 +157,8 @@ If necessary, I use [ShellMenuView](https://www.nirsoft.net/utils/shell_menu_vie
 
 I boost my microphone and change headphone equalizer settings.
 
+Optional features can be added with "Turn Windows features on or off." I add Windows Sandbox, Virtual Machine Platform, and [Windows Subsystem for Linux](#Windows Subsystem for Linux).
+
 ### Copy From Backup
 
 I copy over everything from Dropbox from the old drive to save bandwidth. I copy over my folder of git repositories which takes longer than it should due to node_modules folders.
@@ -163,9 +175,22 @@ Uncheck "hide extensions for known file types".
 
 ## Smaller Programs Configuration
 
+For espanso, I copy over my default.yml file.
+
 ### Keypirinha
 
-I configure Keypirinha to use alt+space and startup .
+I configure Keypirinha to use alt+space and startup. I install [PackageControl](https://github.com/ueffel/Keypirinha-PackageControl) which contains packages from [ueffel's Package Repository](https://ue.spdns.de/packagecontrol/). These are the packages I install:
+
+- [WindowsApps](https://github.com/ueffel/Keypirinha-WindowsApps)
+- [winsys](https://github.com/kvnxiao/keypirinha-winsys)
+- [cvt](https://github.com/DrorHarari/keypirinha-cvt)
+- [currency](https://github.com/AvatarHurden/keypirinha-currency)
+- [myip](https://github.com/Fuhrmann/keypirinha-myip)
+- [Time](https://github.com/ueffel/Keypirinha-Time)
+- [colorpicker](https://github.com/clinden/keypirinha-colorpicker)
+- [terminal-profiles](https://github.com/fran-f/keypirinha-terminal-profiles)
+
+Some plugins weren't working for me, including [Command](https://github.com/bantya/Keypirinha-Command) and [sharex](https://github.com/Fuhrmann/keypirinha-sharex).
 
 ### Everything
 
@@ -181,6 +206,8 @@ Copy over the [user profile folder](https://www.zotero.org/support/kb/profile_di
 
 I store my Zotero storage folder in cloud storage. One should make a directory junction (as opposed to symlinks or hardlinks) to storage, since a junction will be valid even when viewed over the network from another computer while a symlink will not. Use `mklink /J storage TARGET_PATH`.[^mklink] 
 
+I install the [BetterBibTex](https://github.com/retorquere/zotero-better-bibtex) plugin. 
+
 ### Steam
 
 I store some games in other drives. To re-add the libraries to Steam, go to Steam > Settings > Downloads > Steam Library Folders.
@@ -194,6 +221,8 @@ I sync my settings, which installs most of my browser extensions. Regarding brow
 [Enhancer for YouTube](https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/)— speed up to 1.2x, control volume with mouse cursor, autoplay at higher quality. Note that it can be worth it to play at a higher quality than your monitor resolution due to compression.
 
 [Tab Unloader for Tree Style Tab](https://addons.mozilla.org/en-US/firefox/addon/tab-unload-for-tree-style-tab/) — tabs unloaded should be hidden from top and only shown in the sidebar. Unfortunately, I can't seem to get it working like it used to.
+
+[Foxy Gestures](https://addons.mozilla.org/en-US/firefox/addon/foxy-gestures/) - I customize my gestures to be more like old Opera.
 
 ## Hardware Configuration
 
@@ -242,13 +271,17 @@ Installed from scoop. Generate a new GUID using `New-Guid` command in powershell
 
 You can customize it further.
 
+#### Jupyter Lab
+
+I install [ipyvolume](https://github.com/maartenbreddels/ipyvolume) and [ipympl](https://github.com/matplotlib/ipympl)
+
 ### NPM and Node
 
 WIP
 
 ### Windows Subsystem for Linux
 
-WIP
+The installation guide is [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10). Make sure you enable the two required optional features (oxymoron) using "Turn Windows features on or off" or the PowerShell commands in the guide.
 
 [^nodejs]: Includes npm.
 [^bandizip]: I used to use Peazip, but startup time was too slow.
@@ -258,7 +291,7 @@ WIP
 [^lockhunter]: Non-portable, for the context menu item.
 
 [^calibre]: `calibre-normal` is the non-portable version.
-
+[^latex]: actually MikTeX
 [^mpv.net]: Sometimes GUIs are nice, especially if you don't want to memorize all the keyboard shortcuts.
-
+[^startup-delayer]: Dropbox and OneDrive interfere with the screen capture shortcuts that I want to give to ShareX, so I ensure ShareX starts first using Startup Delayer.
 [^mklink]: Note that `mklink` exists in the command prompt but not PowerShell.

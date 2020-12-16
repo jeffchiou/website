@@ -18,6 +18,8 @@ module.exports = function (eleventyConfig) {
   markdownLibrary.use(require("markdown-it-textual-uml"));
   markdownLibrary.use(require("markdown-it-anchor"), { level: [2,3,4], permalink: true, permalinkSymbol: '§' });
   markdownLibrary.use(require("markdown-it-toc-done-right"), { level: [2,3,4] });
+  markdownLibrary.use(require('markdown-it-sup'));
+  markdownLibrary.use(require('markdown-it-sub'));
 
   eleventyConfig.setLibrary("md", markdownLibrary);
   eleventyConfig.setTemplateFormats([
