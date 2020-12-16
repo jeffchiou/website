@@ -1,5 +1,6 @@
 ---
 title: "Neuroglial Networks: The Concept"
+datePosted: 2020-12-15
 ---
 
 
@@ -46,7 +47,7 @@ Others have had this idea as well. An early paper by Porto-Pazos et al.[^porto-p
 
 A paper by Ba et al. (incl. Geoffrey Hinton) didn't mention glia, but utilized the concept of different time scales in artificial neural networks. [^ba-hinton2016] Inspired by short-term synaptic plasticity, they used two weight matrices - one fast and one slow.
 
-One paper that with only 1 citation as of 2020-12-15 is actually the closest to how I envisioned a true neuroglial network working.[^salah2018] In 2018, Salah and Guessoum created a glial network modulating other neural networks, operating at a different timescale. Props to them, and I hope they get more citations!
+One paper with only 1 citation (as of 2020-12-15) is actually the closest to how I envisioned a true neuroglial network working.[^salah2018] In 2018, Salah and Guessoum created a glial network modulating other neural networks, operating at a different timescale. Props to them, and I hope they get more citations!
 
 I'll continue adding papers over time; please contact me if I missed any major neuroglial network papers.
 
