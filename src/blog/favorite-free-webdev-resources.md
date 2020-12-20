@@ -1,5 +1,6 @@
 ---
 title: Favorite Free Web Development Resources
+date: 2019-12-09
 datePosted: 2019-12-09
 published: true
 slug: favorite-free-webdev-resources

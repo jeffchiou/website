@@ -35,6 +35,9 @@ I've categorized the programs I install with Scoop here in no particular order. 
   - [Sublime Text](https://www.sublimetext.com/) `sublime-text`
   - [Visual Studio Code](https://code.visualstudio.com/) `vscode`
   - [Anaconda](https://www.anaconda.com/products/individual) `anaconda3`
+  - R `r`
+  - [RStudio](https://rstudio.com/) `rstudio`
+  - [RTools](https://cran.r-project.org/bin/windows/Rtools/) `rtools`
 
 - General Tools
 
@@ -60,14 +63,13 @@ I've categorized the programs I install with Scoop here in no particular order. 
 
 - Web Browsers
 
-  - [Firefox](https://www.mozilla.org/en-US/firefox/new/) `firefox`
-  - [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) `firefox-developer`
   - [Google Chrome](https://www.google.com/chrome/) `googlechrome`
   - [Vivaldi](https://vivaldi.com/) `vivaldi`
-
+  
 - Notes and Research
 
   - [Anki](https://apps.ankiweb.net/) `anki`
+  - [Freeplane](https://www.freeplane.org/wiki/index.php/Home) `freeplane` [^freeplane]
   - [Typora](https://typora.io/) `typora`
   - [Zettlr](https://www.zettlr.com/) `zettlr`
   - [Zotero](https://www.zotero.org/) `zotero`
@@ -77,10 +79,9 @@ I've categorized the programs I install with Scoop here in no particular order. 
   - [Carnac](http://code52.org/carnac/) `carnac`
   - [Discord](https://discord.com/) `discord`
   - [Slack](https://slack.com/) `slack`
-  - [OBS Studio](https://obsproject.com/) `obs-studio`
   - [Skype](https://www.skype.com/en/) `skype`
   - [Zoom](https://zoom.us/) `zoom`
-
+  
 - Editing
 
   - [paint.net](https://www.getpaint.net/) `paint.net`
@@ -137,12 +138,16 @@ I usually set `choco feature enable -n allowGlobalConfirmation` so I don't have 
   - [Choco Cleaner](https://chocolatey.org/packages/choco-cleaner) `choco-cleaner`
   - [Choco Optimize at](https://chocolatey.org/packages/choco-optimize-at) `choco-optimize-at`
   -  [Choco Upgrade All at](https://chocolatey.org/packages/choco-upgrade-all-at) `choco-upgrade-all-at --params "'/WEEKLY:yes /DAY:SAT /TIME:01:00'"`
+- [ActivityWatch](https://github.com/ActivityWatch/activitywatch) `activitywatch` 
 - [Corsair iCue](https://www.corsair.com/us/en/icue) `icue`
 - [EA Origin](https://www.origin.com/usa/en-us/store) `origin`
 - [Epic Games Launcher](https://www.epicgames.com/store/en-US/download) `epicgameslauncher`
-- [ActivityWatch](https://github.com/ActivityWatch/activitywatch) `activitywatch`
-- [pyenv for Windows](https://github.com/pyenv-win/pyenv-win) `pyenv-win`
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/) `firefox` [^firefox]
+- [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) `firefox-developer`
+- [Java Runtime Environment](https://www.oracle.com/java/technologies/javase-jre8-downloads.html) `jre8`
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) `jetbrainsmono`
+- [OBS Studio](https://obsproject.com/) `obs-studio` [^obs-studio]
+- [pyenv for Windows](https://github.com/pyenv-win/pyenv-win) `pyenv-win`
 - [Samsung Magician](https://www.samsung.com/semiconductor/minisite/ssd/product/consumer/magician/) `samsung-magician`
 
 ## Windows Configuration
@@ -295,3 +300,6 @@ The installation guide is [here](https://docs.microsoft.com/en-us/windows/wsl/in
 [^mpv.net]: Sometimes GUIs are nice, especially if you don't want to memorize all the keyboard shortcuts.
 [^startup-delayer]: Dropbox and OneDrive interfere with the screen capture shortcuts that I want to give to ShareX, so I ensure ShareX starts first using Startup Delayer.
 [^mklink]: Note that `mklink` exists in the command prompt but not PowerShell.
+[^obs-studio]: Can't be installed with scoop because plugins don't persist across versions.
+[^firefox]: scoop doesn't persist the profile across updates, requiring messing around with about:profile every time I use `scoop cleanup`, so I use chocolatey.
+[^freeplane]: install jre8 with chocolatey

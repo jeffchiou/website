@@ -1,5 +1,6 @@
 ---
 title: "Neuroglial Networks: The Concept"
+date: 2020-12-15
 datePosted: 2020-12-15
 ---
 
@@ -49,7 +50,7 @@ A paper by Ba et al. (incl. Geoffrey Hinton) didn't mention glia, but utilized t
 
 One paper with only 1 citation (as of 2020-12-15) is actually the closest to how I envisioned a true neuroglial network working.[^salah2018] In 2018, Salah and Guessoum created a glial network modulating other neural networks, operating at a different timescale. Props to them, and I hope they get more citations!
 
-I'll continue adding papers over time; please contact me if I missed any major neuroglial network papers.
+I'll continue adding papers over time; please comment or contact me if I missed any major neuroglial network papers.
 
 [^synapse-picture]: Synapse from NIH NIA brochure, [Wikipedia Source](https://commons.wikimedia.org/wiki/File:Chemical_synapse_schema_cropped.jpg), 2009
 [^astrocyte-gerryshaw]: Astrocyte by user GerryShaw, [Wikipedia Source](https://commons.wikimedia.org/wiki/File:Astrocyte5.jpg) 2013

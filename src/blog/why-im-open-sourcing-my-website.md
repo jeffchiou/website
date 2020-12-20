@@ -1,6 +1,7 @@
 ---
 title: Why I'm Open-Sourcing My Website!
-datePosted: "2020-11-25"
+date: 2020-11-25
+datePosted: 2020-11-25
 ---
 
 I've open sourced this website! I was a little anxious about doing so because it exposes all the bumps and imperfections. Here are the reasons why I did it:

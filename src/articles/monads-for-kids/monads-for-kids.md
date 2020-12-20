@@ -1,6 +1,7 @@
 ---
 title: Monads for Kids
 tags: ['article', 'functional']
+date: 2020-12-15
 datePosted: 2020-11-27
 ---
 

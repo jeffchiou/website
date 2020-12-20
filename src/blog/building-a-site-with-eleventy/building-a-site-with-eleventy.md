@@ -1,7 +1,8 @@
 ---
 title: Building a Site with Eleventy
 tags: blog
-datePosted: 2012-11-22
+date: 2020-12-16
+datePosted: 2020-11-22
 ---
 
 [toc]
