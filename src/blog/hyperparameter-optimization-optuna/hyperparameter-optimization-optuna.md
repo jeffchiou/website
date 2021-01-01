@@ -1,6 +1,7 @@
 ---
 title: "Hyperparameter Optimization with Optuna: Tips and Tricks"
 datePosted: 2020-12-20
+date: 2020-12-20
 ---
 
 [toc]
