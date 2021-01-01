@@ -118,6 +118,7 @@ Some of these programs are on Chocolatey but I prefer to install them manually.
 - [Adobe](https://www.adobe.com/creativecloud.html) products
 - [Drawboard PDF](https://www.drawboard.com/pdf/) for annotating PDFs
 - [Nvidia RTX Voice](https://www.nvidia.com/en-us/geforce/guides/nvidia-rtx-voice-setup-guide/)
+- [Lyx](https://www.lyx.org/)
 - [Logitech G Hub](https://www.logitechg.com/en-us/innovation/g-hub.html)
 - [Microsoft Office](https://www.office.com/)
 - [Microsoft Whiteboard](https://www.microsoft.com/en-us/p/microsoft-whiteboard/9mspc6mp8fm4?activetab=pivot:overviewtab)

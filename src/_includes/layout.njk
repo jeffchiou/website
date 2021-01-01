@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/prism-synthwave84.css" >
     <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/katex.min.css">    
     <link rel="stylesheet" href="{{ site.baseUrl }}/assets/styles/index.css">
-    <script defer src="{{ site.baseUrl }}/assets/js/mermaid.min.js"></script>
+    {# <script defer src="{{ site.baseUrl }}/assets/js/mermaid.min.js"></script> #}
     {% block head %}{% endblock %}
     <script defer src="{{ site.baseUrl }}/assets/js/index.js"></script>
     <script type="module">
@@ -61,8 +61,8 @@
         {% include "footer.njk" %}
         </div>
     </div>
-    <script>
+    {# <script>
       mermaid.initialize({startOnLoad: true});
-    </script>
+    </script> #}
   </body>
 </html>
