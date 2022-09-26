@@ -43,11 +43,11 @@ I have found that choosing a set of values makes me a happier and more engaged p
 
 4. Completion
 
-   I used to be rather perfectionistic, but made great strides in 2020 regarding finishing things.
+   I used to be rather perfectionistic, but made large strides in 2020 regarding finishing things. I would like to keep it up for 2021.
 
 5. Connection
 
-   I'd like to express how much I value my friends and family
+   I'd like to express how much I value my friends and family.
 
 ### Commentary
 

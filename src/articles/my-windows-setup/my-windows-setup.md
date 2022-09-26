@@ -5,7 +5,7 @@ datePosted: 2020-12-06
 
 [toc]
 
-
+Update: I recently got a new laptop - going through the same process again so some items will change
 
 Welcome to my Windows setup! Recently I reinstalled Windows on a higher-capacity Samsung SSD, removing the old one. Here I'll list the programs I install as well as the configuration steps I perform.
 
@@ -17,9 +17,9 @@ I'm planning to update this article over the next few days, as I run into issues
 
 ### First Programs
 
-The first thing I install is [Scoop](https://scoop.sh/). Then I use Scoop to install almost everything else. Scoop doesn't automatically add things to the context menu, which I like since my context menu tends to get too cluttered. I add the items I want manually. 
+The first thing I install is [Scoop](https://scoop.sh/). Then I use Scoop to install almost everything else. After install, do a `scoop install git` and then use `scoop bucket add` to add the buckets`extras`, `nonportable`,`nirsoft`, and `java` . Scoop doesn't automatically add things to the context menu, which I like since my context menu tends to get too cluttered. I add the items I want manually. 
 
-To it easier to associate files with Scoop-installed programs, I saw that the "open with" context menu item points to `C:\Program Files`. I just added two shortcuts to the Program Files folder that I created on the desktop — the first to `C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps` and the second to `C:\Users\mirum\scoop\apps`
+To make it easier to associate files with Scoop-installed programs, I saw that the "open with" context menu item points to `C:\Program Files`. I just added two shortcuts to the Program Files folder that I created on the desktop — the first to `C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scoop Apps` and the second to `C:\Users\USERNAME\scoop\apps`
 
 Things that I can't find on Scoop, I use [Chocolatey](https://chocolatey.org/). I've found that Chocolatey doesn't clean up as easily so I try not to install too many things with it.
 
@@ -29,13 +29,12 @@ I've categorized the programs I install with Scoop here in no particular order. 
 
 - Developer Tools
 
+  - [AWS CLI](https://aws.amazon.com/cli/) `aws`
   - [git](https://git-scm.com/) `git`
   - [Gnu on Windows](https://github.com/bmatzelle/gow) `gow`
   - [Node.js](https://nodejs.org/en/) `nodejs` [^nodejs]
   - [Sublime Text](https://www.sublimetext.com/) `sublime-text`
-  - [Visual Studio Code](https://code.visualstudio.com/) `vscode`
-  - [Anaconda](https://www.anaconda.com/products/individual) `anaconda3`
-  - R `r`
+  - [R](https://www.r-project.org/) `r`
   - [RStudio](https://rstudio.com/) `rstudio`
   - [RTools](https://cran.r-project.org/bin/windows/Rtools/) `rtools`
 
@@ -43,6 +42,7 @@ I've categorized the programs I install with Scoop here in no particular order. 
 
   - [7-Zip](https://www.7-zip.org/) `7zip`
   - [Bandizip](https://en.bandisoft.com/bandizip/) `bandizip` [^bandizip]
+  - [BleachBit](https://www.bleachbit.org/) `bleachbit`
   - [Bulk Crap Uninstaller](https://www.bcuninstaller.com/) `bulk-crap-uninstaller` [^bcu]
   - [Bulk Rename Utility](https://www.bulkrenameutility.co.uk/) `bulk-rename-utility`
   - [espanso](https://espanso.org/) `espanso`
@@ -52,6 +52,7 @@ I've categorized the programs I install with Scoop here in no particular order. 
   - [Keypirinha](https://keypirinha.com/) `keypirinha`
   - [LaTeX](https://miktex.org/) `latex` [^latex]
   - [LockHunter](https://lockhunter.com/) `lockhunter-np` [^lockhunter]
+  - [HWiNFO](https://www.hwinfo.com/) `hwinfo`
   - [Microsoft Powertoys](https://github.com/microsoft/PowerToys) `powertoys-np`
   - [Pandoc](https://pandoc.org/) `pandoc`
   - [pandoc-crossref filter](https://github.com/lierdakil/pandoc-crossref) `pandoc-crossref`
@@ -59,13 +60,9 @@ I've categorized the programs I install with Scoop here in no particular order. 
   - [ShareX](https://getsharex.com/) `sharex`
   - [ShellMenuView](https://www.nirsoft.net/utils/shell_menu_view.html) `shellmenuview`
   - [Sysinternals](https://docs.microsoft.com/en-us/sysinternals/) `sysinternals`
+  - [Winscp](https://winscp.net/eng/index.php) `winscp`
   - [WizTree](https://wiztreefree.com/) `wiztree`
 
-- Web Browsers
-
-  - [Google Chrome](https://www.google.com/chrome/) `googlechrome`
-  - [Vivaldi](https://vivaldi.com/) `vivaldi`
-  
 - Notes and Research
 
   - [Anki](https://apps.ankiweb.net/) `anki`
@@ -91,9 +88,12 @@ I've categorized the programs I install with Scoop here in no particular order. 
 - Media
 
   - [Calibre](https://calibre-ebook.com/) `calibre-normal`[^calibre]
+  - [IrfanView](https://www.irfanview.com/) `irfanview`
   - [mpv](https://mpv.io/) `mpv`
   - [mpv.net](https://github.com/stax76/mpv.net) `mpv.net` [^mpv.net] 
+  - [Spotify](https://www.spotify.com) `spotify-latest`
   - [VLC](https://www.videolan.org/vlc/index.html) `vlc`
+  - [XnView MP](https://www.xnview.com/en/xnviewmp/) `xnviewmp`
 
 - Misc
 
@@ -105,7 +105,8 @@ I've categorized the programs I install with Scoop here in no particular order. 
 
   - [.NET SDK](https://dotnet.microsoft.com/download) `dotnet-sdk`
   - [Visual C++ Redistributable 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) `vcredist2019`
-
+  - OpenJDK `openjdk`
+  
   
 
 
@@ -117,7 +118,7 @@ Some of these programs are on Chocolatey but I prefer to install them manually.
 
 - [Adobe](https://www.adobe.com/creativecloud.html) products
 - [Drawboard PDF](https://www.drawboard.com/pdf/) for annotating PDFs
-- [Nvidia RTX Voice](https://www.nvidia.com/en-us/geforce/guides/nvidia-rtx-voice-setup-guide/)
+- [Nvidia RTX Voice](https://www.nvidia.com/en-us/geforce/guides/nvidia-rtx-voice-setup-guide/) or [Nvidia Broadcast](https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/)
 - [Lyx](https://www.lyx.org/)
 - [Logitech G Hub](https://www.logitechg.com/en-us/innovation/g-hub.html)
 - [Microsoft Office](https://www.office.com/)
@@ -126,10 +127,13 @@ Some of these programs are on Chocolatey but I prefer to install them manually.
 - My password manager
 - [Startup Delayer](https://www.r2.com.au/page/products/show/startup-delayer/)[^startup-delayer]
 - [Windows Terminal Preview](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n8g5rfz9xk3?rtc=1&activetab=pivot:overviewtab)
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- [Google Chrome](https://www.google.com/chrome/)
+- [Visual Studio Code](https://code.visualstudio.com/) `vsco
 - Gaming
   - [NVIDIA GeForce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
   - [Steam](https://store.steampowered.com/about/)
-  - [Ubisoft Connect](https://ubisoftconnect.com/en-US/)
+  - 
 
 ### Chocolatey
 
@@ -137,19 +141,23 @@ I usually set `choco feature enable -n allowGlobalConfirmation` so I don't have 
 
 - A lot of [bcurran3](https://chocolatey.org/profiles/bcurran3)'s packages
   - [Choco Cleaner](https://chocolatey.org/packages/choco-cleaner) `choco-cleaner`
-  - [Choco Optimize at](https://chocolatey.org/packages/choco-optimize-at) `choco-optimize-at`
+  - ~~[Choco Optimize at](https://chocolatey.org/packages/choco-optimize-at) `choco-optimize-at`~~ Removed from free tier of chocolatey
   -  [Choco Upgrade All at](https://chocolatey.org/packages/choco-upgrade-all-at) `choco-upgrade-all-at --params "'/WEEKLY:yes /DAY:SAT /TIME:01:00'"`
 - [ActivityWatch](https://github.com/ActivityWatch/activitywatch) `activitywatch` 
 - [Corsair iCue](https://www.corsair.com/us/en/icue) `icue`
+- [Dropbox](https://www.dropbox.com/) `dropbox`
 - [EA Origin](https://www.origin.com/usa/en-us/store) `origin`
 - [Epic Games Launcher](https://www.epicgames.com/store/en-US/download) `epicgameslauncher`
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/) `firefox` [^firefox]
-- [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) `firefox-developer`
 - [Java Runtime Environment](https://www.oracle.com/java/technologies/javase-jre8-downloads.html) `jre8`
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) `jetbrainsmono`
+- [Malwarebytes](https://www.malwarebytes.com/) `malwarebytes`
 - [OBS Studio](https://obsproject.com/) `obs-studio` [^obs-studio]
 - [pyenv for Windows](https://github.com/pyenv-win/pyenv-win) `pyenv-win`
 - [Samsung Magician](https://www.samsung.com/semiconductor/minisite/ssd/product/consumer/magician/) `samsung-magician`
+- [Ubisoft Connect](https://ubisoftconnect.com/en-US/) `ubisoft-connect`
+- [Vivaldi](https://vivaldi.com/) `vivaldi`
+- [Opera GX](https://www.opera.com/gx) `opera-gx`
+- [ZenTimings](https://zentimings.protonrom.com) `zentimings`
 
 ## Windows Configuration
 
@@ -167,7 +175,7 @@ Optional features can be added with "Turn Windows features on or off." I add Win
 
 ### Copy From Backup
 
-I copy over everything from Dropbox from the old drive to save bandwidth. I copy over my folder of git repositories which takes longer than it should due to node_modules folders.
+I copy over everything from Dropbox from the old drive. I copy over my folder of git repositories which takes longer than it should due to node_modules folders.
 
 I copy wallpapers from my wallpaper folder to the default DesktopBackground folder (I get most of my wallpapers from [wallpaperhub.app](https://wallpaperhub.app))
 
@@ -252,7 +260,7 @@ I copy over my old SSH keys as well.
 
 ### Python Configuration
 
-Use pyenv-win from chocolatey and anaconda3 from scoop.
+Use pyenv-win from chocolatey and conda. Turn off Python's app execution aliases in Windows to prevent the Microsoft Store from opening up when trying to use Python
 
 `pyenv update` 
 
@@ -262,9 +270,9 @@ Use pyenv-win from chocolatey and anaconda3 from scoop.
 
 `pyenv global 3.x.x`
 
-#### Anaconda
+#### Conda
 
-Installed from scoop. Generate a new GUID using `New-Guid` command in powershell. Windows terminal configuration:
+Generate a new GUID using `New-Guid` command in powershell. Windows terminal configuration:
 
 ```json
 {
