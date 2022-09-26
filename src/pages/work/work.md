@@ -9,9 +9,12 @@ My <a href='https://jeffchiou.github.io/resume/'>resume</a> is on Github pages. 
 
 ## Portfolio
 
+### Obsidiflip
+
+Flippable Obsidian-to-Anki flashcards using CSS and two plugins: [Obsidiflip](https://github.com/jeffchiou/obsidiflip).
+
 
 ### CoordiScroll
-
 
 As demonstrated on the widescreen view of this website, [CoordiScroll](https://jeffchiou.github.io/coordiscroll/) is a javascript utility that synchronizes scrolling across elements. It uses a publish-subscribe architecture for maximum flexibility. An extension version is on the backburner.
 
