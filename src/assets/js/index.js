@@ -44,16 +44,25 @@ let copyDiv = document.querySelector("#main-copy-controls")
 let mainCopy = insertClone(copyDiv,main,"main-copy")
 mainCopy.style.width = main.style.width
 
-// Utterances commenting system
-let s = document.createElement('script')
-s.setAttribute('src', 'https://utteranc.es/client.js')
-s.setAttribute('repo','jeffchiou/website')
-s.setAttribute('label','💬')
-s.setAttribute('issue-term','pathname')
-s.setAttribute('theme','boxy-light')
-s.setAttribute('crossorigin','anonymous')
-s.setAttribute('defer','')
-let s2 = s.cloneNode(true)
+
+
+// Giscus commenting system
+// let s = document.createElement('script')
+// s.setAttribute('src', 'https://giscus.app/client.js')
+// s.setAttribute('data-repo','jeffchiou/website')
+// s.setAttribute('data-repo-id','MDEwOlJlcG9zaXRvcnkzMTUxODEwNTY=')
+// s.setAttribute('data-category','Announcements')
+// s.setAttribute('data-category-id','DIC_kwDOEslIAM4CRqk9')
+// s.setAttribute('data-mapping','pathname')
+// s.setAttribute('data-strict','0')
+// s.setAttribute('data-reactions-enabled','1')
+// s.setAttribute('data-emit-metadata','0')
+// s.setAttribute('data-input-position','top')
+// s.setAttribute('data-theme','light')
+// s.setAttribute('data-lang','en')
+// s.setAttribute('crossorigin','anonymous')
+// s.setAttribute('async','')
+// let s2 = s.cloneNode(true)
 
 
 let aux = document.querySelector("#auxiliary-content")
@@ -64,12 +73,101 @@ if (aux) {
   auxCopy = insertClone(auxDiv,main,"auxiliary","aux-copied")
 }
 
-mainCopy.appendChild(s)
-auxCopy.appendChild(s2)
+// Prevent duplication of comments if they loaded quickly
+let commentCheck1 = mainCopy.querySelector('.giscus')
+if (commentCheck1) {
+  commentCheck1.remove()
+}
+let commentCheck2 = auxCopy.querySelector('.giscus')
+if (commentCheck2) {
+  commentCheck2.remove()
+}
 
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+function waitForEl(target, selector) {
+  return new Promise(resolve => {
+    const observer = new MutationObserver(mutations => {
+      if (target.querySelector(selector)) {
+        observer.disconnect()
+        resolve(target.querySelector(selector))        
+      }
+    })
+    observer.observe(target, {
+      childList: true,
+      subtree: true,
+      attributes: true 
+    })
+  })
+}
+
+function waitForStyleAttribute(target) {
+  return new Promise(resolve => {
+    let timer
+    const observer = new MutationObserver(mutations => {
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(() => {
+        mutations.forEach( (mutation) => {
+          if (mutation.type === 'attributes') {
+            observer.disconnect()
+            resolve(target)
+          }
+        })
+      }, 1000)
+    })
+    observer.observe(target, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeList: ['style']
+    })
+  })
+}
+
+
+waitForEl(document.body, '.giscus-frame').then((frame) => {
+  let s = document.createElement('div')
+  s.setAttribute('class', 'giscus')
+  let s2 = s.cloneNode(false)
+  let f = frame.cloneNode(true)
+  let f2 = f.cloneNode(true)
+  s.appendChild(f)
+  s2.appendChild(f2)
+  mainCopy.appendChild(s)
+  auxCopy.appendChild(s2)
+  waitForStyleAttribute(frame).then((frame2) => {
+    console.log(frame2.getAttribute('style'))
+    f.setAttribute('style', frame2.getAttribute('style'))
+    f2.setAttribute('style', frame2.getAttribute('style'))
+  })
+})
+
+
+
+// waitForEl(document.body, '.giscus-frame[style*="height"]').then((elm) => {
+//   console.log("found")
+//   waitForStyleAttribute(elm).then((elm2) => {
+//     console.log("appending")
+//     let s = document.createElement('div')
+//     s.setAttribute('class', 'giscus')
+//     let s2 = s.cloneNode(false)
+//     let f = elm.cloneNode(true)
+//     // f.setAttribute('style', elm.getAttribute('style'))
+//     let f2 = f.cloneNode(true)
+//     s.appendChild(f)
+//     s2.appendChild(f2)
+//     console.log("appending")
+    
+//     mainCopy.appendChild(s)
+//     auxCopy.appendChild(s2)
+//   })
+// })
+
+
+
+
 
 // Try to avoid hammering the github search api if changing pages quickly
 // sleep(500).then( () => mainCopy.appendChild(s) )

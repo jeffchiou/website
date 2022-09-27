@@ -19,6 +19,8 @@ Open-sourcing is one form of learning in public (another being blogging). As a c
 
 My site already has enough of a footprint, so I didn't want to add more by introducing a heavy commenting like Disqus. Instead, I found [utterances](https://utteranc.es/), created by [Jeremy Danyow](https://danyow.net/using-github-issues-for-blog-comments/). It's a lightweight commenting app that hooks into your github repository, and only works if your repository is public!
 
+Edit: I have now moved to [giscus](https://giscus.app/), a similar system!
+
 ## 3. Exposure Therapy
 
 After years of mental health struggles, I've finally found therapy systems that work for me long term, and that I can continue maintaining on my own. These are [ACT](https://en.wikipedia.org/wiki/Acceptance_and_commitment_therapy), [DBT](https://en.wikipedia.org/wiki/Dialectical_behavior_therapy), and [CBT](https://en.wikipedia.org/wiki/Cognitive_behavioral_therapy). By exposing my work and thoughts to the world, I am practicing some of my values (ex action, courage, completion) ala ACT, attenuating anxiety ala CBT, and regulating emotion ala DBT.
