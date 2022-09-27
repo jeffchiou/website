@@ -137,7 +137,7 @@ h6:hover .header-anchor {
 
 @layer components {
   body {
-    font-variation-settings: 'wght' 360;    
+    font-variation-settings: 'wght' 360;
   }
   #all-wrapper {
     @apply w-screen sm:w-auto;
